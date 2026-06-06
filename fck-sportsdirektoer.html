@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FCK — Sportsdirektør Status AKA cirkusshowet</title>
+<title>FCK — Cirkusshowet</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -18,197 +18,101 @@
     --card-bg: #FFFFFF;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--off-white);
-    color: var(--dark);
-    min-height: 100vh;
-  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--off-white); color: var(--dark); min-height: 100vh; }
 
-  /* HEADER */
-  header {
-    background: var(--red);
-    padding: 0;
-    position: relative;
-    overflow: hidden;
-  }
+  header { background: var(--red); padding: 0; position: relative; overflow: hidden; }
   header::before {
     content: 'FCK';
-    position: absolute;
-    right: -20px;
-    top: -30px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 220px;
-    color: rgba(255,255,255,0.06);
-    letter-spacing: -4px;
-    pointer-events: none;
-    user-select: none;
+    position: absolute; right: -20px; top: -30px;
+    font-family: 'Bebas Neue', sans-serif; font-size: 220px;
+    color: rgba(255,255,255,0.06); letter-spacing: -4px;
+    pointer-events: none; user-select: none;
   }
-  .header-inner {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 3rem 2rem 2.5rem;
-  }
+  .header-inner { max-width: 800px; margin: 0 auto; padding: 3rem 2rem 2.5rem; }
   .header-tag {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--dark);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 4px;
-    margin-bottom: 1rem;
+    display: inline-block; background: var(--gold); color: var(--dark);
+    font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 4px; margin-bottom: 1rem;
   }
   header h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(48px, 10vw, 80px);
-    color: var(--white);
-    line-height: 0.95;
-    letter-spacing: 1px;
-    margin-bottom: 1rem;
+    font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px, 10vw, 80px);
+    color: var(--white); line-height: 0.95; letter-spacing: 1px; margin-bottom: 1rem;
   }
-  header p {
-    color: rgba(255,255,255,0.75);
-    font-size: 16px;
-    max-width: 420px;
-    line-height: 1.6;
-  }
+  header p { color: rgba(255,255,255,0.75); font-size: 16px; max-width: 420px; line-height: 1.6; }
 
-  /* MAIN */
-  main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
+  main { max-width: 800px; margin: 0 auto; padding: 2rem; }
 
-  /* STATUS BANNER */
   .status-banner {
-    background: var(--gold);
-    border-radius: 10px;
-    padding: 1rem 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 2rem;
+    background: var(--gold); border-radius: 10px; padding: 1rem 1.5rem;
+    display: flex; align-items: center; gap: 12px; margin-bottom: 2rem;
     animation: fadeIn 0.5s ease;
   }
   .status-dot {
-    width: 12px;
-    height: 12px;
-    background: var(--dark);
-    border-radius: 50%;
-    flex-shrink: 0;
-    animation: pulse 2s infinite;
+    width: 12px; height: 12px; background: var(--dark); border-radius: 50%;
+    flex-shrink: 0; animation: pulse 2s infinite;
   }
   @keyframes pulse {
     0%, 100% { opacity: 1; transform: scale(1); }
     50% { opacity: 0.5; transform: scale(0.8); }
   }
-  .status-banner p {
-    font-weight: 600;
-    font-size: 15px;
-    color: var(--dark);
-  }
+  .status-banner p { font-weight: 600; font-size: 15px; color: var(--dark); }
 
-  /* STAT GRID */
   .stat-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 2rem;
-    animation: fadeIn 0.6s ease 0.1s both;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 12px; margin-bottom: 1rem; animation: fadeIn 0.6s ease 0.1s both;
   }
   .stat-card {
-    background: var(--card-bg);
-    border-radius: 12px;
-    padding: 1.25rem;
-    border: 1px solid var(--gray-light);
+    background: var(--card-bg); border-radius: 12px;
+    padding: 1.25rem; border: 1px solid var(--gray-light);
   }
-  .stat-card .label {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--gray);
-    margin-bottom: 6px;
-    font-weight: 500;
-  }
-  .stat-card .value {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 42px;
-    color: var(--red);
-    line-height: 1;
-    letter-spacing: 0.5px;
-  }
-  .stat-card .unit {
-    font-size: 13px;
-    color: var(--gray);
-    margin-top: 4px;
-  }
+  .stat-card .label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--gray); margin-bottom: 6px; font-weight: 500; }
+  .stat-card .value { font-family: 'Bebas Neue', sans-serif; font-size: 42px; color: var(--red); line-height: 1; letter-spacing: 0.5px; }
+  .stat-card .unit { font-size: 13px; color: var(--gray); margin-top: 4px; }
 
-  /* SECTION */
-  section {
-    margin-bottom: 2rem;
-    animation: fadeIn 0.6s ease 0.2s both;
+  .countdown-card {
+    background: var(--dark); border-radius: 12px; padding: 1.5rem;
+    margin-bottom: 2rem; text-align: center; animation: fadeIn 0.6s ease 0.15s both;
   }
+  .countdown-card .label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); font-weight: 600; margin-bottom: 0.75rem; }
+  .countdown-boxes { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .cd-box { text-align: center; }
+  .cd-num { font-family: 'Bebas Neue', sans-serif; font-size: 52px; color: var(--white); line-height: 1; display: block; }
+  .cd-unit { font-size: 11px; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; }
+  .cd-sep { font-family: 'Bebas Neue', sans-serif; font-size: 40px; color: var(--red); align-self: center; padding-top: 4px; }
+
+  section { margin-bottom: 2rem; animation: fadeIn 0.6s ease 0.2s both; }
   section h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    letter-spacing: 0.5px;
-    color: var(--dark);
-    margin-bottom: 1rem;
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--red);
-    display: inline-block;
+    font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.5px;
+    color: var(--dark); margin-bottom: 1rem; padding-bottom: 8px;
+    border-bottom: 2px solid var(--red); display: inline-block;
   }
 
-  /* SVAR PÅ SPØRGSMÅL */
-  .answer-card {
-    background: var(--card-bg);
-    border-radius: 12px;
-    padding: 1.5rem;
-    border: 1px solid var(--gray-light);
-    margin-bottom: 1rem;
-  }
-  .answer-card .q {
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--red);
-    font-weight: 600;
-    margin-bottom: 8px;
-  }
-  .answer-card .a {
-    font-size: 16px;
-    line-height: 1.7;
-    color: var(--dark);
-  }
+  .answer-card { background: var(--card-bg); border-radius: 12px; padding: 1.5rem; border: 1px solid var(--gray-light); margin-bottom: 1rem; }
+  .answer-card .q { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--red); font-weight: 600; margin-bottom: 8px; }
+  .answer-card .a { font-size: 16px; line-height: 1.7; color: var(--dark); }
   .answer-card .a strong { font-weight: 600; }
 
-  /* TIDSLINJE */
+  .kandidater { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 2rem; }
+  .kandidat-card { background: var(--card-bg); border-radius: 12px; padding: 1.25rem; border: 1px solid var(--gray-light); }
+  .kandidat-card .navn { font-size: 16px; font-weight: 600; color: var(--dark); margin-bottom: 4px; }
+  .kandidat-card .info { font-size: 13px; color: var(--gray); line-height: 1.5; }
+  .kandidat-card .badge {
+    display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.5px;
+    text-transform: uppercase; padding: 3px 8px; border-radius: 4px; margin-bottom: 8px;
+  }
+  .badge-rygtet { background: #FFF3CD; color: #856404; }
+  .badge-bekraeftet { background: #D1E7DD; color: #0A3622; }
+
   .timeline { display: flex; flex-direction: column; gap: 0; }
   .tl-item { display: flex; gap: 16px; position: relative; }
   .tl-item:not(:last-child)::before {
-    content: '';
-    position: absolute;
-    left: 19px;
-    top: 36px;
-    bottom: 0;
-    width: 2px;
-    background: var(--gray-light);
+    content: ''; position: absolute; left: 19px; top: 36px; bottom: 0;
+    width: 2px; background: var(--gray-light);
   }
   .tl-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    z-index: 1;
-    margin-top: 2px;
+    width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; z-index: 1; margin-top: 2px;
   }
   .tl-icon.done { background: var(--red); color: white; }
   .tl-icon.pending { background: var(--gold); color: var(--dark); }
@@ -217,60 +121,22 @@
   .tl-title { font-size: 16px; font-weight: 600; color: var(--dark); margin-bottom: 4px; }
   .tl-desc { font-size: 14px; color: #555; line-height: 1.6; }
 
-  /* QUOTE */
-  .quote {
-    background: var(--dark);
-    color: var(--white);
-    border-radius: 12px;
-    padding: 1.75rem;
-    position: relative;
-    overflow: hidden;
-  }
+  .quote { background: var(--dark); color: var(--white); border-radius: 12px; padding: 1.75rem; position: relative; overflow: hidden; }
   .quote::before {
-    content: '"';
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 180px;
-    color: rgba(255,255,255,0.05);
-    position: absolute;
-    top: -30px;
-    left: 10px;
-    line-height: 1;
+    content: '"'; font-family: 'Bebas Neue', sans-serif; font-size: 180px;
+    color: rgba(255,255,255,0.05); position: absolute; top: -30px; left: 10px; line-height: 1;
   }
-  .quote p {
-    font-size: 17px;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 1rem;
-    position: relative;
-  }
-  .quote cite {
-    font-size: 13px;
-    color: var(--gold);
-    font-style: normal;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-  }
+  .quote p { font-size: 17px; line-height: 1.7; color: rgba(255,255,255,0.9); margin-bottom: 1rem; position: relative; }
+  .quote cite { font-size: 13px; color: var(--gold); font-style: normal; font-weight: 600; letter-spacing: 0.5px; }
 
-  /* FOOTER */
-  footer {
-    text-align: center;
-    padding: 2rem;
-    font-size: 12px;
-    color: var(--gray);
-    border-top: 1px solid var(--gray-light);
-    max-width: 800px;
-    margin: 0 auto;
-  }
+  footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--gray); border-top: 1px solid var(--gray-light); max-width: 800px; margin: 0 auto; }
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 
   @media (max-width: 600px) {
     .stat-grid { grid-template-columns: repeat(2, 1fr); }
-    .stat-grid .stat-card:last-child { grid-column: 1 / -1; }
     main { padding: 1.25rem; }
+    .cd-num { font-size: 38px; }
   }
 </style>
 </head>
@@ -288,13 +154,13 @@
 
   <div class="status-banner">
     <div class="status-dot"></div>
-    <p>FCK har endnu IKKE ansat en ny sportsdirektør — pr. 7. juni 2026</p>
+    <p id="status-text">FCK har endnu IKKE ansat en ny sportsdirektør</p>
   </div>
 
   <div class="stat-grid">
     <div class="stat-card">
       <div class="label">Dage uden sportsdirektør</div>
-      <div class="value" id="days">104</div>
+      <div class="value" id="days">—</div>
       <div class="unit">og tæller...</div>
     </div>
     <div class="stat-card">
@@ -309,22 +175,49 @@
     </div>
   </div>
 
+  <div class="countdown-card">
+    <div class="label">⏱ Nedtælling til deadline — 15. juni 2026</div>
+    <div class="countdown-boxes">
+      <div class="cd-box"><span class="cd-num" id="cd-d">—</span><span class="cd-unit">Dage</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-box"><span class="cd-num" id="cd-t">—</span><span class="cd-unit">Timer</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-box"><span class="cd-num" id="cd-m">—</span><span class="cd-unit">Min</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-box"><span class="cd-num" id="cd-s">—</span><span class="cd-unit">Sek</span></div>
+    </div>
+  </div>
+
   <section>
     <h2>Svar på dine spørgsmål</h2>
-
     <div class="answer-card">
       <div class="q">Har FCK fået en ny sportsdirektør?</div>
-      <div class="a"><strong>Nej.</strong> FCK har pr. 7. juni 2026 endnu ikke ansat en ny sportsdirektør. Sune Smith-Nielsen blev fyret den 23. februar 2026, og siden da har CEO Jacob Lauesen midlertidigt varetaget de administrative opgaver. Klubben er dog langt fremme i processen og forventer at have en mand klar inden 15. juni.</div>
+      <div class="a"><strong>Nej.</strong> FCK har endnu ikke ansat en ny sportsdirektør. Sune Smith-Nielsen blev fyret den 23. februar 2026, og siden da har CEO Jacob Lauesen midlertidigt varetaget de administrative opgaver. Klubben er dog langt fremme i processen og forventer at have en mand klar inden 15. juni.</div>
     </div>
-
     <div class="answer-card">
       <div class="q">Hvor lang tid har FCK været uden sportsdirektør?</div>
-      <div class="a">FCK har været uden sportsdirektør i <strong id="days2">104</strong> dage — fra den 23. februar 2026 til i dag. Det er en usædvanlig lang periode for en klub af FCKs størrelse, særligt med en travl sommer med transfervindue og ny træner (Bo Svensson) på vej.</div>
+      <div class="a">FCK har været uden sportsdirektør i <strong id="days2">—</strong> dage — fra den 23. februar 2026 til i dag. Det er en usædvanlig lang periode for en klub af FCKs størrelse, særligt med en travl sommer med transfervindue og ny træner (Bo Svensson) på vej.</div>
     </div>
   </section>
 
   <section>
-    <h2>Hvad sker der?</h2>
+    <h2>Mulige kandidater</h2>
+    <div class="kandidater">
+      <div class="kandidat-card">
+        <span class="badge badge-rygtet">Rygtet</span>
+        <div class="navn">Peter Christiansen</div>
+        <div class="info">Tidligere FCK-sportsdirektør (2021–2024). Fyret fra Wolfsburg marts 2026. Har besøgt Parken.</div>
+      </div>
+      <div class="kandidat-card">
+        <span class="badge badge-rygtet">Rygtet</span>
+        <div class="navn">Ukendt kandidat</div>
+        <div class="info">FCK har kogt listen ned til en håndfuld navne. Ingen er offentliggjort endnu.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Hvad siger FCK?</h2>
     <div class="quote">
       <p>Vi skal have en sportsdirektør på plads, inden transferarbejdet rigtigt starter. Jeg kommer ikke til at speede det her op på bekostning af at finde den helt rigtige person.</p>
       <cite>— Henrik Møgelmose, bestyrelsesformand, Parken Sport & Entertainment</cite>
@@ -372,15 +265,48 @@
 </main>
 
 <footer>
-  Kilder: Tipsbladet, Bold.dk, TV 2 Sport, fck.dk &nbsp;·&nbsp; Opdateret 7. juni 2026
+  Kilder: Tipsbladet, Bold.dk, TV 2 Sport, fck.dk &nbsp;·&nbsp; Opdateres automatisk
 </footer>
 
 <script>
   var fyret = new Date('2026-02-23');
-  var idag = new Date();
-  var dage = Math.floor((idag - fyret) / (1000 * 60 * 60 * 24));
-  document.getElementById('days').textContent = dage;
-  document.getElementById('days2').textContent = dage;
+
+  function opdaterDage() {
+    var idag = new Date();
+    var dage = Math.floor((idag - fyret) / (1000 * 60 * 60 * 24));
+    document.getElementById('days').textContent = dage;
+    document.getElementById('days2').textContent = dage;
+  }
+
+  function opdaterNedtaelling() {
+    var deadline = new Date('2026-06-15T00:00:00');
+    var nu = new Date();
+    var forskel = deadline - nu;
+
+    if (forskel <= 0) {
+      document.getElementById('cd-d').textContent = '0';
+      document.getElementById('cd-t').textContent = '0';
+      document.getElementById('cd-m').textContent = '0';
+      document.getElementById('cd-s').textContent = '0';
+      document.getElementById('status-text').textContent = '⚠️ DEADLINE OVERSKREDET — FCK har stadig ingen sportsdirektør!';
+      return;
+    }
+
+    var d = Math.floor(forskel / (1000 * 60 * 60 * 24));
+    var t = Math.floor((forskel % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var m = Math.floor((forskel % (1000 * 60 * 60)) / (1000 * 60));
+    var s = Math.floor((forskel % (1000 * 60)) / 1000);
+
+    document.getElementById('cd-d').textContent = d;
+    document.getElementById('cd-t').textContent = t < 10 ? '0'+t : t;
+    document.getElementById('cd-m').textContent = m < 10 ? '0'+m : m;
+    document.getElementById('cd-s').textContent = s < 10 ? '0'+s : s;
+  }
+
+  opdaterDage();
+  opdaterNedtaelling();
+  setInterval(opdaterNedtaelling, 1000);
+  setInterval(opdaterDage, 60000);
 </script>
 
 </body>

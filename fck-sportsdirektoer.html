@@ -20,7 +20,6 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
 
-  /* HEADER */
   header {
     background: linear-gradient(180deg, #1a0008 0%, var(--bg) 100%);
     border-bottom: 1px solid var(--border);
@@ -43,16 +42,31 @@
   }
   .live-dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; animation: pulse 2s infinite; }
   header h1 {
-    font-family: 'Bebas Neue', sans-serif; font-size: clamp(52px, 10vw, 90px);
+    font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px, 9vw, 84px);
     color: #fff; line-height: 0.95; letter-spacing: 1px; margin-bottom: 1rem;
   }
   header h1 span { color: var(--red); }
-  header p { color: var(--text-muted); font-size: 15px; max-width: 460px; line-height: 1.7; }
+  header p { color: var(--text-muted); font-size: 15px; max-width: 480px; line-height: 1.7; }
 
-  /* LAYOUT */
   main { max-width: 860px; margin: 0 auto; padding: 2rem; }
 
-  /* STATUS */
+  /* OVERSKREDET BANNER */
+  .overskredet-banner {
+    background: linear-gradient(135deg, #2a0000, #1a0000);
+    border: 1px solid var(--red);
+    border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .overskredet-banner::before {
+    content: ''; position: absolute; inset: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(200,16,46,0.03) 10px, rgba(200,16,46,0.03) 20px);
+  }
+  .overskredet-banner .big-tag {
+    font-family: 'Bebas Neue', sans-serif; font-size: 32px; color: var(--red);
+    letter-spacing: 1px; margin-bottom: 6px; position: relative;
+  }
+  .overskredet-banner p { font-size: 14px; color: var(--text-dim); position: relative; }
+
   .status-banner {
     background: rgba(200,16,46,0.1); border: 1px solid rgba(200,16,46,0.25);
     border-radius: 10px; padding: 1rem 1.5rem;
@@ -62,34 +76,33 @@
   @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.7)} }
   .status-banner p { font-weight: 600; font-size: 14px; color: #fff; }
 
-  /* STAT GRID */
   .stat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 12px; }
   .stat-card { background: var(--bg2); border-radius: 12px; padding: 1.25rem; border: 1px solid var(--border); }
+  .stat-card.alert { border-color: rgba(200,16,46,0.4); background: rgba(200,16,46,0.05); }
   .stat-card .label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 8px; font-weight: 600; }
   .stat-card .value { font-family: 'Bebas Neue', sans-serif; font-size: 44px; color: var(--red); line-height: 1; letter-spacing: 0.5px; }
   .stat-card .unit { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
 
-  /* COUNTDOWN */
   .countdown-card {
-    background: var(--bg2); border: 1px solid var(--border);
+    background: var(--bg2); border: 1px solid rgba(200,16,46,0.3);
     border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; text-align: center;
   }
-  .countdown-card .label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); font-weight: 600; margin-bottom: 1rem; }
+  .countdown-card .label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--red); font-weight: 600; margin-bottom: 1rem; }
   .countdown-boxes { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
   .cd-box { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; min-width: 70px; text-align: center; }
-  .cd-num { font-family: 'Bebas Neue', sans-serif; font-size: 46px; color: #fff; line-height: 1; display: block; }
+  .cd-num { font-family: 'Bebas Neue', sans-serif; font-size: 46px; color: var(--red); line-height: 1; display: block; }
   .cd-unit { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
   .cd-sep { font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: var(--red); align-self: center; padding-bottom: 16px; }
 
-  /* SECTION */
   section { margin-bottom: 2rem; }
   .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
   .section-header h2 { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.5px; color: #fff; }
   .section-header .tag { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; padding: 3px 8px; border-radius: 4px; background: var(--bg3); color: var(--text-muted); border: 1px solid var(--border); }
+  .section-header .tag.new { background: rgba(200,16,46,0.15); color: var(--red); border-color: rgba(200,16,46,0.3); }
 
-  /* NYHEDER */
   .news-grid { display: flex; flex-direction: column; gap: 10px; }
   .news-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.25rem; display: flex; flex-direction: column; gap: 6px; cursor: pointer; transition: border-color 0.2s; text-decoration: none; }
+  .news-card.featured { border-color: rgba(200,16,46,0.4); background: rgba(200,16,46,0.04); }
   .news-card:hover { border-color: var(--red); }
   .news-card .news-meta { display: flex; align-items: center; gap: 8px; }
   .news-card .news-source { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--red); }
@@ -97,7 +110,6 @@
   .news-card .news-title { font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.4; }
   .news-card .news-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
 
-  /* KAMPE */
   .kampe-grid { display: flex; flex-direction: column; gap: 8px; }
   .kamp-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
   .kamp-dato { font-size: 12px; color: var(--text-muted); min-width: 100px; }
@@ -106,39 +118,34 @@
   .kamp-hold span { color: var(--red); }
   .kamp-type { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; padding: 3px 8px; border-radius: 4px; color: var(--text-muted); background: var(--bg3); border: 1px solid var(--border); white-space: nowrap; }
 
-  /* KANDIDATER */
   .kandidater { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
   .kandidat-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
   .kandidat-card .badge { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; margin-bottom: 8px; }
   .badge-rygtet { background: rgba(245,197,24,0.1); color: var(--gold); border: 1px solid rgba(245,197,24,0.2); }
-  .badge-bekraeftet { background: rgba(34,197,94,0.1); color: #4ade80; border: 1px solid rgba(34,197,94,0.2); }
   .kandidat-card .navn { font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 4px; }
   .kandidat-card .info { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
 
-  /* TIDSLINJE */
   .timeline { display: flex; flex-direction: column; }
   .tl-item { display: flex; gap: 16px; position: relative; }
   .tl-item:not(:last-child)::before { content: ''; position: absolute; left: 19px; top: 40px; bottom: 0; width: 1px; background: var(--border); }
   .tl-icon { width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 15px; z-index: 1; margin-top: 2px; }
   .tl-icon.done { background: var(--red); color: white; border: 2px solid rgba(200,16,46,0.3); }
   .tl-icon.pending { background: var(--bg3); color: var(--gold); border: 1px solid rgba(245,197,24,0.3); }
+  .tl-icon.bad { background: var(--bg3); color: var(--red); border: 1px solid rgba(200,16,46,0.4); }
   .tl-body { padding-bottom: 1.5rem; flex: 1; }
   .tl-date { font-size: 11px; color: var(--text-muted); letter-spacing: 0.5px; margin-bottom: 2px; }
   .tl-title { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 4px; }
   .tl-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
 
-  /* QUOTE */
-  .quote { background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--red); border-radius: 0 10px 10px 0; padding: 1.5rem; position: relative; overflow: hidden; }
+  .quote { background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--red); border-radius: 0 10px 10px 0; padding: 1.5rem; position: relative; overflow: hidden; margin-bottom: 10px; }
   .quote p { font-size: 16px; line-height: 1.8; color: var(--text); margin-bottom: 0.75rem; font-style: italic; }
   .quote cite { font-size: 12px; color: var(--gold); font-style: normal; font-weight: 600; letter-spacing: 0.5px; }
 
-  /* ANSWER */
   .answer-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; margin-bottom: 10px; }
   .answer-card .q { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--red); font-weight: 600; margin-bottom: 8px; }
   .answer-card .a { font-size: 15px; line-height: 1.7; color: var(--text-dim); }
   .answer-card .a strong { color: #fff; font-weight: 600; }
 
-  /* BILLEDER */
   .billeder-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 2rem; }
   .billed-card { border-radius: 12px; overflow: hidden; border: 1px solid var(--border); position: relative; }
   .billed-card img { width: 100%; height: 200px; object-fit: cover; display: block; filter: grayscale(20%) contrast(1.1); }
@@ -146,7 +153,6 @@
   .billed-card .caption p { font-size: 13px; font-weight: 600; color: #fff; }
   .billed-card .caption span { font-size: 11px; color: var(--text-muted); }
 
-  /* FOOTER */
   footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); max-width: 860px; margin: 0 auto; }
   footer a { color: var(--red); text-decoration: none; }
 
@@ -154,7 +160,7 @@
     .stat-grid { grid-template-columns: repeat(2,1fr); }
     .billeder-grid { grid-template-columns: 1fr; }
     main { padding: 1rem; }
-    .cd-num { font-size: 34px; }
+    .cd-num { font-size: 30px; }
     .kamp-card { flex-wrap: wrap; }
   }
 </style>
@@ -163,7 +169,7 @@
 
 <header>
   <div class="header-inner">
-    <div class="header-tag"><div class="live-dot"></div> Live status</div>
+    <div class="header-tag"><div class="live-dot"></div> Live status — Deadline overskredet</div>
     <h1>FCK <span>Cirkus</span>showet</h1>
     <p>Overblik over jagten på en ny sportsdirektør til F.C. København — efter fyringen af Sune Smith-Nielsen den 23. februar 2026.</p>
   </div>
@@ -171,31 +177,31 @@
 
 <main>
 
-  <div class="status-banner">
-    <div class="status-dot"></div>
-    <p>🚨 FCK har endnu IKKE ansat en ny sportsdirektør — deadline om få dage</p>
+  <div class="overskredet-banner">
+    <div class="big-tag">🚨 DEADLINE OVERSKREDET</div>
+    <p>15. juni kom og gik — FCK har STADIG ingen sportsdirektør. Eksperter peger nu på juli.</p>
   </div>
 
   <div class="stat-grid">
-    <div class="stat-card">
+    <div class="stat-card alert">
       <div class="label">Dage uden sportsdirektør</div>
       <div class="value" id="days">—</div>
-      <div class="unit">og tæller...</div>
+      <div class="unit">og tæller stadig...</div>
     </div>
     <div class="stat-card">
       <div class="label">Fyret</div>
       <div class="value">23/2</div>
       <div class="unit">Sune Smith-Nielsen</div>
     </div>
-    <div class="stat-card">
+    <div class="stat-card alert">
       <div class="label">Deadline</div>
       <div class="value">15/6</div>
-      <div class="unit">Inden transfervinduet</div>
+      <div class="unit">⚠️ Overskredet</div>
     </div>
   </div>
 
   <div class="countdown-card">
-    <div class="label">⏱ Nedtælling til deadline — 15. juni 2026</div>
+    <div class="label" id="cd-label">⏱ Tid SIDEN deadline udløb (15. juni)</div>
     <div class="countdown-boxes">
       <div class="cd-box"><span class="cd-num" id="cd-d">—</span><span class="cd-unit">Dage</span></div>
       <div class="cd-sep">:</div>
@@ -207,11 +213,8 @@
     </div>
   </div>
 
-  <!-- BILLEDER -->
   <section>
-    <div class="section-header">
-      <h2>Personerne i centrum</h2>
-    </div>
+    <div class="section-header"><h2>Personerne i centrum</h2></div>
     <div class="billeder-grid">
       <div class="billed-card">
         <img src="https://www.fck.dk/sites/default/files/styles/player_profile/public/2024-06/sune-smith-nielsen-sportsdirektor-fck.jpg" 
@@ -228,66 +231,67 @@
              alt="Parken Stadium">
         <div class="caption">
           <p>Parken Stadium</p>
-          <span>FCK's hjemmebane — venter på ny sportslig leder</span>
+          <span>Venter stadig på en sportslig leder</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- NYHEDER -->
   <section>
     <div class="section-header">
       <h2>Seneste nyheder</h2>
-      <span class="tag">Opdateret manuelt</span>
+      <span class="tag new">🔥 Opdateret 16. juni</span>
     </div>
     <div class="news-grid">
-      <a class="news-card" href="https://www.tipsbladet.dk/nyhed/superliga/fck-sigter-stadig-efter-15-juni" target="_blank">
+      <a class="news-card featured" href="https://bold.dk/fodbold/klubber/fc-koebenhavn/nyheder/fck-overskrider-deadline-man-kan-vaere-helt-rolig" target="_blank">
+        <div class="news-meta">
+          <span class="news-source">Bold.dk</span>
+          <span class="news-date">16. juni 2026</span>
+        </div>
+        <div class="news-title">FCK overskrider deadline: "Man kan være helt rolig"</div>
+        <div class="news-desc">Jacob Lauesen bekræfter at FCK stadig ikke har en sportsdirektør, selvom egen deadline (15. juni) er overskredet. "Det tager tid," siger direktøren.</div>
+      </a>
+      <a class="news-card featured" href="https://www.plbold.dk/nyhed/fck-under-pres-ny-sportsdirektoer-faar-350-mio-kr-at-handle-for/" target="_blank">
+        <div class="news-meta">
+          <span class="news-source">PL Bold</span>
+          <span class="news-date">14. juni 2026</span>
+        </div>
+        <div class="news-title">FCK under pres: Ny sportsdirektør får 350 mio. kr. at handle for</div>
+        <div class="news-desc">Den kommende sportsdirektør får et klart krav om resultater med det samme — FCK skal sikre Conference League-spil og videre til knockout-fasen.</div>
+      </a>
+      <a class="news-card" href="https://www.tipsbladet.dk/nyhed/superliga/fck-paa-jagt-man-faar-nok-brug-for-google" target="_blank">
         <div class="news-meta">
           <span class="news-source">Tipsbladet</span>
-          <span class="news-date">22. maj 2026</span>
+          <span class="news-date">16. juni 2026</span>
         </div>
-        <div class="news-title">FCK sigter stadig efter 15. juni</div>
-        <div class="news-desc">FCK håber snart at have en ny sportsdirektør på plads. Jacob Lauesen bekræfter at klubben er i gang med processen.</div>
+        <div class="news-title">FCK på jagt: "Man får nok brug for Google"</div>
+        <div class="news-desc">Viaplay-ekspert Søren Frederiksen vurderer der kan gå til juli, før FCK præsenterer en ny sportsdirektør — måske 14 dage yderligere.</div>
       </a>
-      <a class="news-card" href="https://bold.dk/fodbold/klubber/fc-koebenhavn/nyheder/fck-afholder-samtaler-nede-pa-en-handfuld" target="_blank">
+      <a class="news-card" href="https://www.fck.dk/nyhed/opdatering-paa-den-sportslige-organisering" target="_blank">
         <div class="news-meta">
-          <span class="news-source">Bold.dk</span>
-          <span class="news-date">28. april 2026</span>
+          <span class="news-source">FCK.dk</span>
+          <span class="news-date">~10. juni 2026</span>
         </div>
-        <div class="news-title">FCK afholder samtaler: Nede på en håndfuld</div>
-        <div class="news-desc">Henrik Møgelmose bekræfter at FCK er i gang med indledende interviews. Listen er kogt ned til en håndfuld kandidater.</div>
+        <div class="news-title">Opdatering på den sportslige organisering</div>
+        <div class="news-desc">Lauesen: "Vi har haft omfattende strategiske drøftelser." Rollen er udvidet til at omfatte førsteholdet, talent, kvindehold og FC Rosengård 1917.</div>
       </a>
-      <a class="news-card" href="https://bold.dk/fodbold/klubber/fc-koebenhavn/nyheder/fck-jagter-sportsdirektor-pa-plads-inden-15-juni" target="_blank">
+      <a class="news-card" href="https://www.tipsbladet.dk/nyhed/generelle/hold-oeje-med-fck-sker-det-i-denne-uge" target="_blank">
         <div class="news-meta">
-          <span class="news-source">Bold.dk</span>
-          <span class="news-date">28. april 2026</span>
+          <span class="news-source">Tipsbladet</span>
+          <span class="news-date">9. juni 2026</span>
         </div>
-        <div class="news-title">FCK jagter sportsdirektør: På plads inden 15. juni</div>
-        <div class="news-desc">Møgelmose slår fast at FCK skal have en ny sportsdirektør inden transfervinduet åbner — men forhaster sig ikke.</div>
-      </a>
-      <a class="news-card" href="https://bold.dk/fodbold/klubber/fc-koebenhavn/nyheder/fck-pa-jagt-sportsdirektor-i-spaendetroje" target="_blank">
-        <div class="news-meta">
-          <span class="news-source">Bold.dk</span>
-          <span class="news-date">6. marts 2026</span>
-        </div>
-        <div class="news-title">FCK på jagt: Sportsdirektør i spændetrøje</div>
-        <div class="news-desc">Den fremtidige sportsdirektør i FCK får mindre magt end tidligere — det gør jobbet mindre attraktivt for topkandidater.</div>
+        <div class="news-title">Hold øje med FCK — sker det i denne uge?</div>
+        <div class="news-desc">Op til deadline meldte Lauesen stadig at "planen er stadig 15. juni." Det holdt ikke.</div>
       </a>
     </div>
   </section>
 
-  <!-- KOMMENDE KAMPE -->
   <section>
     <div class="section-header">
       <h2>Kommende kampe</h2>
       <span class="tag">Sommer 2026</span>
     </div>
     <div class="kampe-grid">
-      <div class="kamp-card">
-        <div class="kamp-dato"><strong>13. jun 2026</strong>14:00</div>
-        <div class="kamp-hold"><span>FCK</span> (k) vs FC Midtjylland (k)</div>
-        <div class="kamp-type">A-Liga Kval.</div>
-      </div>
       <div class="kamp-card">
         <div class="kamp-dato"><strong>27. jun 2026</strong>14:00</div>
         <div class="kamp-hold"><span>FCK</span> vs MAIF</div>
@@ -301,7 +305,7 @@
       <div class="kamp-card">
         <div class="kamp-dato"><strong>27. jul 2026</strong>19:00</div>
         <div class="kamp-hold"><span>FCK</span> vs Lyngby</div>
-        <div class="kamp-type">3F Superliga</div>
+        <div class="kamp-type">3F Superliga — Sæsonstart</div>
       </div>
       <div class="kamp-card">
         <div class="kamp-dato"><strong>2. aug 2026</strong>18:00</div>
@@ -316,7 +320,6 @@
     </div>
   </section>
 
-  <!-- KANDIDATER -->
   <section>
     <div class="section-header">
       <h2>Mulige kandidater</h2>
@@ -331,34 +334,35 @@
       <div class="kandidat-card">
         <span class="badge badge-rygtet">Ukendt</span>
         <div class="navn">Håndfuld kandidater</div>
-        <div class="info">FCK afviser at oplyse navne. Møgelmose: "I får ikke nogen som helst indikationer."</div>
+        <div class="info">FCK afviser at oplyse navne. Processen er nu beskrevet som "kompleks" af direktør Lauesen.</div>
       </div>
     </div>
   </section>
 
-  <!-- HVAD SIGER FCK -->
   <section>
     <div class="section-header"><h2>Hvad siger FCK?</h2></div>
     <div class="quote">
-      <p>Vi skal have en sportsdirektør på plads, inden transferarbejdet rigtigt starter. Jeg kommer ikke til at speede det her op på bekostning af at finde den helt rigtige person.</p>
-      <cite>— Henrik Møgelmose, bestyrelsesformand, Parken Sport & Entertainment</cite>
+      <p>Vi tager os den fornødne tid til at finde den rigtige løsning — også selvom det betyder, at det varer lidt længere end ventet. Men det betyder absolut ikke, at det sportslige arbejde står stille.</p>
+      <cite>— Jacob Lauesen, CEO, F.C. København (16. juni 2026)</cite>
+    </div>
+    <div class="quote">
+      <p>Vi har ikke nogen forventning om, at FC København skal være lige på trapperne med en nyhed. Det allerbedste bud er, at vi nok skal ind i juli.</p>
+      <cite>— Søren Frederiksen, Viaplay Sport News</cite>
     </div>
   </section>
 
-  <!-- SVAR -->
   <section>
     <div class="section-header"><h2>Svar på spørgsmålene</h2></div>
     <div class="answer-card">
-      <div class="q">Har FCK fået en ny sportsdirektør?</div>
-      <div class="a"><strong>Nej.</strong> FCK har pr. 7. juni 2026 endnu ikke ansat en ny sportsdirektør. CEO Jacob Lauesen varetager midlertidigt opgaverne. Klubben er i interviews og forventer en ansættelse inden 15. juni.</div>
+      <div class="q">Fik FCK en ny sportsdirektør inden 15. juni?</div>
+      <div class="a"><strong>Nej.</strong> FCK overskred sin egen selvvalgte deadline. Den 16. juni 2026 bekræftede direktør Jacob Lauesen at klubben stadig leder, og at processen er "kompleks". Eksperter vurderer det først sker i juli.</div>
     </div>
     <div class="answer-card">
-      <div class="q">Hvor lang tid har FCK været uden sportsdirektør?</div>
-      <div class="a">FCK har været uden sportsdirektør i <strong id="days2">—</strong> dage — siden den 23. februar 2026. Det er usædvanligt langt, særligt med transfervindue og ny træner Bo Svensson på vej.</div>
+      <div class="q">Hvor lang tid har FCK nu været uden sportsdirektør?</div>
+      <div class="a">FCK har været uden sportsdirektør i <strong id="days2">—</strong> dage — siden den 23. februar 2026. Det er en historisk lang periode for en klub af FCKs størrelse, midt i et åbent transfervindue.</div>
     </div>
   </section>
 
-  <!-- TIDSLINJE -->
   <section>
     <div class="section-header"><h2>Tidslinje</h2></div>
     <div class="timeline">
@@ -367,7 +371,7 @@
         <div class="tl-body">
           <div class="tl-date">23. februar 2026</div>
           <div class="tl-title">Sune Smith-Nielsen fyret</div>
-          <div class="tl-desc">FCK fyrer sportsdirektøren med øjeblikkelig virkning. Utilfredsstillende resultater trods historisk højt spillerbudget. CEO Lauesen overtager midlertidigt.</div>
+          <div class="tl-desc">FCK fyrer sportsdirektøren med øjeblikkelig virkning. CEO Jacob Lauesen overtager midlertidigt opgaverne.</div>
         </div>
       </div>
       <div class="tl-item">
@@ -391,15 +395,31 @@
         <div class="tl-body">
           <div class="tl-date">22. maj 2026</div>
           <div class="tl-title">Sæsonen slut — stadig ingen sportsdirektør</div>
-          <div class="tl-desc">FCK vinder 3-1 over Brøndby i sæsonens sidste kamp. Sigter stadig efter at have sportsdirektør på plads inden 15. juni.</div>
+          <div class="tl-desc">FCK vinder 3-1 over Brøndby. Lauesen: "Vores plan er stadig at have en sportsdirektør på plads 15. juni."</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-icon bad">⚠️</div>
+        <div class="tl-body">
+          <div class="tl-date">15. juni 2026</div>
+          <div class="tl-title">DEADLINE OVERSKREDET</div>
+          <div class="tl-desc">FCKs selvvalgte deadline kommer og går — uden ansættelse. Transfervinduet er åbnet uden sportsdirektør ved roret.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-icon bad">📢</div>
+        <div class="tl-body">
+          <div class="tl-date">16. juni 2026</div>
+          <div class="tl-title">Lauesen: "Man kan være helt rolig"</div>
+          <div class="tl-desc">FCK udsender opdatering — processen er "kompleks", og man tager sig "den fornødne tid". Eksperter peger på juli som realistisk tidsramme.</div>
         </div>
       </div>
       <div class="tl-item">
         <div class="tl-icon pending">⏳</div>
         <div class="tl-body">
-          <div class="tl-date">Inden 15. juni 2026</div>
-          <div class="tl-title">Ny sportsdirektør skal være klar</div>
-          <div class="tl-desc">FCKs deadline. Transfervinduet åbner. Ny rolle med snævrere fokus — kun sportslig performance, ikke HR eller byggeri.</div>
+          <div class="tl-date">Forventet juli 2026</div>
+          <div class="tl-title">Ny sportsdirektør forventes</div>
+          <div class="tl-desc">Den nye direktør får ca. 350 mio. kr. at handle for, men også et klart krav om umiddelbare resultater og Conference League-kvalifikation.</div>
         </div>
       </div>
     </div>
@@ -408,7 +428,7 @@
 </main>
 
 <footer>
-  Kilder: <a href="https://bold.dk" target="_blank">Bold.dk</a> · <a href="https://www.tipsbladet.dk" target="_blank">Tipsbladet</a> · <a href="https://sport.tv2.dk" target="_blank">TV 2 Sport</a> · <a href="https://www.fck.dk" target="_blank">fck.dk</a> &nbsp;·&nbsp; Opdateres automatisk dagligt
+  Kilder: <a href="https://bold.dk" target="_blank">Bold.dk</a> · <a href="https://www.tipsbladet.dk" target="_blank">Tipsbladet</a> · <a href="https://www.plbold.dk" target="_blank">PL Bold</a> · <a href="https://www.fck.dk" target="_blank">fck.dk</a> &nbsp;·&nbsp; Opdateres automatisk dagligt
 </footer>
 
 <script>
@@ -424,16 +444,7 @@
   function opdaterNedtaelling() {
     var deadline = new Date('2026-06-15T00:00:00');
     var nu = new Date();
-    var forskel = deadline - nu;
-
-    if (forskel <= 0) {
-      document.getElementById('cd-d').textContent = '0';
-      document.getElementById('cd-t').textContent = '00';
-      document.getElementById('cd-m').textContent = '00';
-      document.getElementById('cd-s').textContent = '00';
-      document.querySelector('.status-banner p').textContent = '🚨 DEADLINE OVERSKREDET — FCK har stadig ingen sportsdirektør!';
-      return;
-    }
+    var forskel = nu - deadline; // positiv = overskredet
 
     var d = Math.floor(forskel / (1000*60*60*24));
     var t = Math.floor((forskel % (1000*60*60*24)) / (1000*60*60));

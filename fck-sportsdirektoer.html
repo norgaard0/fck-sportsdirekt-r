@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FCK SKANDALE — Sportsdirektør-krisen</title>
+<title>🚨🚨🚨 FCK APOKALYPSE — KLUBBEN I FRIT FALD 🚨🚨🚨</title>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,800;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -20,7 +20,14 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; overflow-x: hidden; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; overflow-x: hidden; position: relative; }
+  body::before {
+    content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 999;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(255,0,0,0.25) 100%);
+    animation: vignettePulse 2.2s infinite;
+  }
+  @keyframes vignettePulse { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
+  @keyframes megaShake { 0%,100%{transform:translate(0,0) rotate(0)} 10%{transform:translate(-3px,2px) rotate(-0.5deg)} 20%{transform:translate(3px,-2px) rotate(0.5deg)} 30%{transform:translate(-4px,0) rotate(-0.7deg)} 40%{transform:translate(4px,1px) rotate(0.7deg)} 50%{transform:translate(-2px,-1px)} 60%{transform:translate(2px,2px)} 70%{transform:translate(-3px,0)} 80%{transform:translate(3px,-1px)} 90%{transform:translate(-1px,1px)} }
 
   @keyframes shake { 0%,100%{transform:translateX(0)} 10%{transform:translateX(-2px) rotate(-0.3deg)} 20%{transform:translateX(2px) rotate(0.3deg)} 30%{transform:translateX(-2px)} 40%{transform:translateX(2px)} 50%{transform:translateX(-1px)} 60%{transform:translateX(1px)} 70%,100%{transform:translateX(0)} }
   @keyframes flash { 0%,100% { background-color: rgba(255,0,0,0.15); } 50% { background-color: rgba(255,0,0,0.35); } }
@@ -33,7 +40,7 @@
 
   /* TICKER */
   .ticker-wrap { background: var(--red); overflow: hidden; padding: 8px 0; border-bottom: 3px solid #000; position: relative; z-index: 10; }
-  .ticker { display: inline-flex; white-space: nowrap; animation: scrollMarquee 22s linear infinite; }
+  .ticker { display: inline-flex; white-space: nowrap; animation: scrollMarquee 10s linear infinite; }
   .ticker span { font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #fff; padding: 0 2rem; }
   .ticker span::before { content: '🚨 '; }
 
@@ -63,11 +70,11 @@
   }
   .live-dot { width: 8px; height: 8px; background: var(--red); border-radius: 50%; }
   header h1 {
-    font-family: 'Anton', sans-serif; font-size: clamp(40px, 9vw, 92px);
-    color: #fff; line-height: 0.92; letter-spacing: 1px; margin-bottom: 1rem;
+    font-family: 'Anton', sans-serif; font-size: clamp(44px, 11vw, 110px);
+    color: #fff; line-height: 0.9; letter-spacing: 1px; margin-bottom: 1rem;
     text-transform: uppercase;
-    text-shadow: 0 0 30px rgba(255,0,0,0.6), 3px 3px 0 var(--red-dark);
-    animation: shake 4s ease-in-out infinite;
+    text-shadow: 0 0 50px rgba(255,0,0,0.9), 0 0 100px rgba(255,0,0,0.5), 4px 4px 0 var(--red-dark);
+    animation: megaShake 0.4s ease-in-out infinite;
   }
   header h1 span { color: var(--red); display: block; -webkit-text-stroke: 1px #fff; }
   header p { color: var(--text-muted); font-size: 15px; max-width: 500px; line-height: 1.7; font-weight: 500; }
@@ -77,11 +84,11 @@
   /* SKANDALE BANNER */
   .overskredet-banner {
     background: linear-gradient(135deg, var(--red-dark), #2a0000);
-    border: 3px solid var(--red);
-    border-radius: 8px; padding: 2rem; margin-bottom: 2rem;
+    border: 4px solid var(--red);
+    border-radius: 8px; padding: 2.5rem; margin-bottom: 2rem;
     text-align: center; position: relative; overflow: hidden;
-    box-shadow: 0 0 40px rgba(255,0,0,0.4), inset 0 0 60px rgba(0,0,0,0.5);
-    animation: slideIn 0.6s ease;
+    box-shadow: 0 0 60px rgba(255,0,0,0.6), inset 0 0 80px rgba(0,0,0,0.6);
+    animation: megaShake 0.5s ease-in-out infinite, slideIn 0.6s ease;
   }
   .overskredet-banner::before {
     content: ''; position: absolute; inset: 0;
@@ -199,16 +206,18 @@
 
 <div class="ticker-wrap">
   <div class="ticker">
-    <span>FCK OVERSKRIDER EGEN DEADLINE</span>
-    <span>STADIG INGEN SPORTSDIREKTØR EFTER 113+ DAGE</span>
-    <span>EKSPERTER: KAN GÅ IND I JULI</span>
-    <span>350 MIO. KR. KLAR TIL NY MAND</span>
+    <span>FCK I FRIT FALD — INGEN SPORTSDIREKTØR</span>
+    <span>113+ DAGE I KAOS — EGEN DEADLINE SPRUNGET</span>
+    <span>EKSPERTER: KAN GÅ IND I JULI — ELLER VÆRRE</span>
+    <span>350 MIO. KR. STÅR UBRUGT HEN</span>
     <span>TRANSFERVINDUE ÅBENT — INGEN VED ROR</span>
-    <span>FCK OVERSKRIDER EGEN DEADLINE</span>
-    <span>STADIG INGEN SPORTSDIREKTØR EFTER 113+ DAGE</span>
-    <span>EKSPERTER: KAN GÅ IND I JULI</span>
-    <span>350 MIO. KR. KLAR TIL NY MAND</span>
+    <span>PANIK I PARKEN — FANS KRÆVER SVAR</span>
+    <span>FCK I FRIT FALD — INGEN SPORTSDIREKTØR</span>
+    <span>113+ DAGE I KAOS — EGEN DEADLINE SPRUNGET</span>
+    <span>EKSPERTER: KAN GÅ IND I JULI — ELLER VÆRRE</span>
+    <span>350 MIO. KR. STÅR UBRUGT HEN</span>
     <span>TRANSFERVINDUE ÅBENT — INGEN VED ROR</span>
+    <span>PANIK I PARKEN — FANS KRÆVER SVAR</span>
   </div>
 </div>
 
@@ -216,16 +225,16 @@
   <div class="siren-bar"></div>
   <div class="header-inner">
     <div class="header-tag"><div class="live-dot"></div> BREAKING — DEADLINE OVERSKREDET</div>
-    <h1>FCK<span>KRISEN</span></h1>
-    <p>Jagten på en ny sportsdirektør er gået fuldstændig i hårdknude. Egen deadline sprunget. Ingen ved hvornår det ender.</p>
+    <h1>FCK<span>APOKALYPSE</span></h1>
+    <p>Jagten på en ny sportsdirektør er total kaos. Egen deadline brutalt sprunget. Klubben famler i blinde. Ingen ved hvornår — eller om — det ender.</p>
   </div>
 </header>
 
 <main>
 
   <div class="overskredet-banner">
-    <div class="big-tag">🚨 DEADLINE OVERSKREDET 🚨</div>
-    <p>15. JUNI KOM OG GIK — FCK HAR STADIG INGEN SPORTSDIREKTØR. EKSPERTER PEGER NU PÅ JULI.</p>
+    <div class="big-tag">💀 KLUBBEN I FULDSTÆNDIG OPLØSNING 💀</div>
+    <p>15. JUNI KOM OG GIK — FCK HAR STADIG INGEN SPORTSDIREKTØR. INGEN VED HVORNÅR DET ENDER. PANIK I PARKEN.</p>
   </div>
 
   <div class="stat-grid">
